@@ -21,15 +21,34 @@ class Program
         Console.Write("Haverá Deposíto inicial (s/n)? ");
         Entrada = Console.ReadLine();
         
+        
         if (Entrada == "s")
         {
+            Console.WriteLine(" ");
             Console.WriteLine("Entre um valor para depósito inicial: ");
             c.Saldo = double.Parse(Console.ReadLine());
         }
 
-        Console.WriteLine("Dados da Conta:");
-        Console.Write($"Conta {c.Numero}, Titular: {c.Titular}, Salto: $ {c.Saldo}");
+        Console.WriteLine(" ");
+        Console.WriteLine("Dados da conta:");
+        Console.WriteLine($"Conta {c.Numero}, Titular: {c.Titular}, Saldo: $ {c.Saldo}");
+        
+        Console.WriteLine(" ");
+        Console.Write("Entre um valor para depósito: ");
+        c.Saldo = double.Parse(Console.ReadLine());
+        
+        Console.WriteLine(" ");
+        Console.WriteLine("Dados da conta: Atualizados:");
+        Console.Write($"Conta {c.Numero}, Titular: {c.Titular}, Saldo: $ {c.Saldo}");
 
+        Console.WriteLine(" ");
+        Console.Write("Entre um valor para saque: ");
+        double valor = double.Parse(Console.ReadLine());
+        c.Saque(valor);
+        
+        Console.WriteLine(" ");
+        Console.WriteLine("Dados da conta: Atualizados:");
+        Console.Write($"Conta {c.Numero}, Titular: {c.Titular}, Saldo: $ {c.Saldo}");
         
     }
     

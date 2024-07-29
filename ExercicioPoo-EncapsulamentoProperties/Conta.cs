@@ -7,6 +7,8 @@ class Conta
     public string Titular { get; set; }
 
     private double _saldo = 0;
+
+    private double _taxa = 5;
     
     public double Saldo
     {
@@ -19,7 +21,13 @@ class Conta
             }
         }
 }
-    
-    
+
+
+    public void Saque(double valor)
+    {
+        _saldo = _saldo - valor - _taxa;
+    } 
     
 }
+
+    
